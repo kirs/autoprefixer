@@ -85,6 +85,12 @@ describe 'Prefixes', ->
     it 'returns prefixes', ->
       empty.other('-moz-').should.eql ['-webkit-', '-ms-']
 
+  describe 'need()', ->
+
+    it 'returns is proeprty need prefixes', ->
+      fill.need('a').should.be.true
+      empty.need('a').should.be.false
+
   describe 'each()', ->
 
     it 'iterates all prefixes for addition', ->

@@ -107,6 +107,10 @@ class Prefixes
   other: (prefix) ->
     @otherCache[prefix] ||= @browsers.prefixes().filter( (i) -> i != prefix )
 
+  # Is property need prefixes
+  need: (prop) ->
+    !!(@add[prop]?.prefixes)
+
   # Execute callback on every prefix for selected property
   each: (prop, callback) ->
     if @add[prop] and @add[prop].prefixes
