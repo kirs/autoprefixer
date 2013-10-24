@@ -113,7 +113,7 @@ class Prefixes
 
   # Execute callback on every prefix for selected property
   each: (prop, callback) ->
-    if @add[prop] and @add[prop].prefixes
+    if @need(prop)
       callback(prefix) for prefix in @add[prop].prefixes
 
   # Is it custom framework prefix, not browser prefix
